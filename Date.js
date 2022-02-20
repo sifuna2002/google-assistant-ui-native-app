@@ -1,17 +1,18 @@
 import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,useColorScheme } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
 function Date() {
+    const theme=useColorScheme();
     return ( 
         <View style={styles.Container}>
             <View style={styles.Left}>
                 <View style={styles.Blue}></View>
-                <Text style={styles.em}>TODAY .</Text>
-                <Text style={styles.p}> February 18</Text>
+                <Text style={theme ==='dark' ? {color:'white'} : {color:'black'}}>TODAY .</Text>
+                <Text style={theme ==='dark' ? {color:'white'}: {color:'black'}}> February 18</Text>
             </View>
             <View style={styles.Right}>
-            <Ionicons name="settings" color="grey" size={20} />
+                {theme==='dark' ? <Ionicons name="settings" size={20} color="white"  /> : <Ionicons name="settings" size={20} color="grey"  />}
             </View>
         </View>
     )

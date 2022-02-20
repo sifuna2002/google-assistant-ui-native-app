@@ -1,7 +1,7 @@
 import React from 'react'
-import { Image,View,Text,StyleSheet,TouchableOpacity} from 'react-native'
+import { useColorScheme,Image,View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 const Task=(props) =>{
-
+	const theme=useColorScheme();
 	return (
 		<View style={styles.item}>
 			<View style={styles.iteml}>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ScrollView,View, Text,TouchableOpacity,StyleSheet,useColorScheme } from "react-native";
+import { View, Text,TouchableOpacity,StyleSheet,useColorScheme } from "react-native";
 import Task from './Task'
 import Date from "./Date"
  import { LinearGradient } from "expo-linear-gradient";
@@ -9,15 +9,15 @@ export default function App() {
 const theme=useColorScheme();
 
   return (
-    <View style={theme == 'light' ? styles.container_light : styles.container_dark}>
+    <View style={theme === 'dark' ? styles.container_dark : styles.container_light}>
     	<View style={styles.taskw}>
-    	     <View style={styles.header}>
-    		<Text style={styles.sectt}>Have a great afternoon😌</Text>
-    	     
+    	    <View style={styles.header}>
+    		<Text style={theme === 'dark' ? styles.text_dark : styles.text_light}>Have a great afternoon😌</Text>
+    	    
     	     <View style={styles.right}>
 			 <Ionicons name="bulb" color="grey" size={32} />
     		<View style={styles.circle}>
-  			<Text style={styles.name}>{theme}</Text>
+  			<Text style={styles.name}>SD</Text>
     	        </View>
     	     </View>
     	     </View>
@@ -45,7 +45,7 @@ const styles=StyleSheet.create({
 	},
 	container_dark: {
 		flex:1,
-		backgroundColor:'grey',
+		backgroundColor:'#3a3434',
 		
 	},
 	taskw: {
@@ -54,7 +54,12 @@ const styles=StyleSheet.create({
 		paddingHorizontal:20,
 			
 	},
-	sectt:{
+	text_dark:{
+		fontSize:24,
+		maxWidth:'60%',
+		color: '#ffffff',
+	},
+	text_light:{
 		fontSize:24,
 		maxWidth:'60%',
 	},

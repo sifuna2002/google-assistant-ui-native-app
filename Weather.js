@@ -1,17 +1,19 @@
 import * as React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,useColorScheme } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 
 function Date() {
+    const theme=useColorScheme();
     return ( 
         <View style={styles.Container}>
             <Ionicons style={styles.w} name="partly-sunny" color="whitesmoke" size={40} />
             <View style={styles.Left}>
-                <Text style={styles.t}>28 . Mostly Cloud</Text>
-                <Text style={styles.em}>Nairobi Kenya</Text>
+                <Text style={theme ==='dark' ? styles.t_dark:styles.t_light}>28 . Mostly Cloud</Text>
+                <Text style={theme ==='dark' ? {color:'white'} : {color:'black'}}>Nairobi Kenya</Text>
             </View>
             <View style={styles.Right}>
-            <Ionicons name="chevron-down" color="black" size={20} />
+            {theme==='dark'?<Ionicons name="chevron-down" color="white" size={20} />:<Ionicons name="chevron-down" color="black" size={20} />}
+            
             </View>
         </View>
     )
@@ -34,8 +36,13 @@ Container :{
 },
 
 
-t :{
+t_light :{
     fontSize:20,
+    color:'black',
+},
+t_dark :{
+    fontSize:20,
+    color: '#FFFFFF',
 },
 Left :{
     flexDirection:'column',	
