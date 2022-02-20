@@ -1,5 +1,11 @@
 # My Universal React Project
 
+
+## Preview 
+
+![Screenshot](image.png)
+
+
 <p>
   <!-- iOS -->
   <a href="https://itunes.apple.com/app/apple-store/id982107779">
