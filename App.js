@@ -2,6 +2,8 @@ import * as React from "react";
 import { View, Text,TouchableOpacity,StyleSheet,useColorScheme } from "react-native";
 import Task from './Task'
 import Date from "./Date"
+
+import BottomTabs from "./BottomTabs";
  import { LinearGradient } from "expo-linear-gradient";
  import {Ionicons} from '@expo/vector-icons';
  import Weather from './Weather'
@@ -33,6 +35,7 @@ const theme=useColorScheme();
     		<LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}}  colors={['orange', 'blue',]} style={styles.horizontal}></LinearGradient>
     		<LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 1}}  colors={['red', 'green',]} style={styles.vertical}></LinearGradient>
     	</TouchableOpacity>
+		<BottomTabs />
     </View>
   );
 }
@@ -62,6 +65,7 @@ const styles=StyleSheet.create({
 	text_light:{
 		fontSize:24,
 		maxWidth:'60%',
+		color:'black',
 	},
 	name:{
 		fontSize:20,
@@ -77,7 +81,7 @@ const styles=StyleSheet.create({
 		justifyContent:'center',
 		width:60,
 		position:'absolute',
-		bottom:30,
+		bottom:40,
 		right:10,
 		height:60,
 		backgroundColor:'#fff',
